@@ -30,15 +30,15 @@ const removeContact = async (contactId) => {
 
 const addContact = async ({name, email, phone}) => {
   const contacts = await listContacts();
-  const newBook = {
+  const newContact = {
     id: nanoid(),
     name,
     email,
     phone
   };
-  contacts.push(newBook);
+  contacts.push(newContact);
   await updateContacts(contacts)
-  return newBook;
+  return newContact;
 };
 
 const updateContact = async (contactId, body) => {
